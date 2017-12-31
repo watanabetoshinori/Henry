@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcB-A4-Bfl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="S6G-5k-h7N">
+            <objects>
+                <navigationController storyboardIdentifier="Main" id="pcB-A4-Bfl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PvY-FW-7d1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ri6-x0-txb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="VLf-j0-Myw" kind="relationship" relationship="rootViewController" id="3VJ-Nr-uRF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXr-B4-a5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="118"/>
+        </scene>
+        <!--Console Log Controller-->
+        <scene sceneID="pNK-ou-WT1">
+            <objects>
+                <viewController id="VLf-j0-Myw" customClass="ConsoleLogController" customModule="Henry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bj7-4X-EY8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cob-Eu-g8Z">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="m8N-1C-yNH"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="U20-IN-gsw"/>
+                                    <barButtonItem systemItem="trash" id="CRX-6Z-BOQ">
+                                        <connections>
+                                            <action selector="clearTapped:" destination="VLf-j0-Myw" id="nR0-2X-MBv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-vi-Ccv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cob-Eu-g8Z" firstAttribute="leading" secondItem="GQa-dY-dw4" secondAttribute="leading" id="5Rj-fp-aoW"/>
+                            <constraint firstAttribute="trailing" secondItem="cob-Eu-g8Z" secondAttribute="trailing" id="KKb-NC-e1o"/>
+                            <constraint firstItem="cob-Eu-g8Z" firstAttribute="top" secondItem="vmx-vi-Ccv" secondAttribute="bottom" id="O1D-YE-VQA"/>
+                            <constraint firstItem="vmx-vi-Ccv" firstAttribute="leading" secondItem="GQa-dY-dw4" secondAttribute="leading" id="OmZ-Ax-D5Q"/>
+                            <constraint firstItem="GQa-dY-dw4" firstAttribute="trailing" secondItem="vmx-vi-Ccv" secondAttribute="trailing" id="aqS-ho-rrm"/>
+                            <constraint firstItem="GQa-dY-dw4" firstAttribute="bottom" secondItem="cob-Eu-g8Z" secondAttribute="bottom" id="sPp-TW-i9y"/>
+                            <constraint firstItem="vmx-vi-Ccv" firstAttribute="top" secondItem="GQa-dY-dw4" secondAttribute="top" id="wgK-t1-aYK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GQa-dY-dw4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kUC-Y1-5Cy">
+                        <barButtonItem key="backBarButtonItem" title="Logs" id="Yei-Ub-ZfF"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="clearButton" destination="CRX-6Z-BOQ" id="Li0-TH-H9h"/>
+                        <outlet property="textView" destination="vmx-vi-Ccv" id="deY-pz-ps7"/>
+                        <outlet property="toolBar" destination="cob-Eu-g8Z" id="QTj-9v-aEH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9q-jg-UDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="DkC-Gu-o3o">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No logs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-4y-vdX">
+                            <rect key="frame" x="91" y="54" width="58" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="JfR-4y-vdX" firstAttribute="centerX" secondItem="DkC-Gu-o3o" secondAttribute="centerX" id="Iew-ir-Fzw"/>
+                        <constraint firstItem="JfR-4y-vdX" firstAttribute="centerY" secondItem="DkC-Gu-o3o" secondAttribute="centerY" id="J7B-3r-q7O"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="YsK-2Z-2DR"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1490" y="117"/>
+        </scene>
+    </scenes>
+</document>
